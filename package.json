@@ -26,6 +26,7 @@
   "dependencies": {
     "core-js": "^3.19.3",
     "cypress": "^10.0.3",
+    "lighthouse-lambda": "git+https://github.com/AlanSwenson/lighthouse-lambda.git",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
