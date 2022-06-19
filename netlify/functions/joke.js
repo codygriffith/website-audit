@@ -1,6 +1,6 @@
 // Jokes provided from the lovely folks at https://icanhazdadjoke.com
 import jokes from './data/jokes.json'
-const createLighthouse = require('lighthouse-lambda')
+// const createLighthouse = require('lighthouse-lambda')
 
 
 export const handler = async () => {
@@ -12,21 +12,21 @@ export const handler = async () => {
 
   console.log('ran')
 
-  createLighthouse('https://alenthea.com', { logLevel: 'info' })
-    .then(({ chrome, results }) => {
-          results = results;
-          // Do something with `results`
-          return chrome.kill().then(() => callback(null))
-        })
-        .catch((error) => {
-          // Handle errors when running Lighthouse
-          return chrome.kill().then(() => callback(error))
-        })
+  // createLighthouse('https://alenthea.com', { logLevel: 'info' })
+  //   .then(({ chrome, results }) => {
+  //         results = results;
+  //         // Do something with `results`
+  //         return chrome.kill().then(() => callback(null))
+  //       })
+  //       .catch((error) => {
+  //         // Handle errors when running Lighthouse
+  //         return chrome.kill().then(() => callback(error))
+  //       })
 
   // Netlify Functions need to return an object with a statusCode
   // Other properties such as headers or body can also be included.
   return {
     statusCode: 200,
-    body: JSON.stringify(randomJoke, results),
+    body: JSON.stringify(randomJoke),
   }
 }
